@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MyCouponBag</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<style>
+body {
+  font-family: Verdana, Sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fff8f0;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+  list-style: none;
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+
+nav ul li a {
+  font-weight: bold;
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ffeb3b;
+  text-shadow: 1px 1px 2px #000;
+}
+
+.social-icons {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.social-icons img {
+  width: 30px;
+  margin: 5px;
+  transition: transform 0.2s ease;
+}
+
+.social-icons img:hover {
+  transform: scale(1.2);
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Coupon Card Feel for Partner Logos */
+#partner .flex > div {
+  border: 2px dashed #ff9800;
+  background-color: #fff3e0;
+  font-weight: bold;
+  color: #e65100;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#partner .flex > div:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* App download buttons - More energetic look */
+#download a {
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#download a:hover {
+  transform: translateY(-2px);
+  background-color: #f44336 !important; /* Excitement red on hover */
+}
+
+/* Header and Section tweaks */
+section h2 {
+  color: #d84315;
+  text-shadow: 1px 1px 1px #ffd54f;
+}
+
+/* Mobile Responsiveness */
+.hamburger {
+  display: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+}
+
+/* Mobile Dropdown */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #ffffff;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+}
+</style>
+
+
+<body class="bg-white text-gray-800 font-sans">
+  
+  <!-- Navbar -->
+ <nav class="flex justify-between items-center p-4 bg-blue-600 text-black">
+    <h1 class="text-2xl font-bold">MyCouponBag</h1>
+    <!-- Hamburger Icon -->
+    <div class="hamburger" onclick="toggleMenu()">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </div>
+
+    <!-- Navigation Links -->
+    <ul class="nav-links">
+      <li><a href="#home" class="hover:underline">Home</a></li>
+      <li><a href="#partner" class="hover:underline">Partner</a></li>
+      <li><a href="#contact" class="hover:underline">Contact</a></li>
+      <li><a href="#download" class="hover:underline">Download</a></li>
+    </ul>
+  </nav>
+</nav>
+
+
+  <!-- Home Section -->
+
+<section id="home" class="p-10 bg-gray-50">
+  <h2 class="text-4xl font-bold text-center mb-6 text-orange-600">MyCouponBag – Organize, Save, and Never Miss a Deal Again!</h2>
+
+  <p class="text-lg max-w-3xl mx-auto text-center mb-6">
+    Tired of losing coupons in texts, emails, or apps? <strong>MyCouponBag</strong> is your one-stop solution to manage all coupons in one place—smart, simple, and AI-powered.
+  </p>
+
+  <div class="text-center mb-6 space-y-2 text-green-700 font-semibold">
+    <p>📌 No more expired deals.</p>
+    <p>📌 No more missed savings.</p>
+    <p>📌 Just more money in your pocket!</p>
+  </div>
+
+  <div class="flex justify-center gap-4 mb-10">
+    <a href="#download" class="bg-blue-600 text-white px-6 py-2 rounded shadow hover:bg-blue-700">Download Now</a>
+    <a href="#contact" class="bg-gray-200 text-black px-6 py-2 rounded shadow hover:bg-gray-300">Learn More</a>
+  </div>
+
+  <div class="max-w-4xl mx-auto space-y-8">
+    <div>
+      <h3 class="text-2xl font-semibold text-orange-500 mb-2">Why MyCouponBag?</h3>
+      <ul class="list-disc pl-6 text-gray-800 space-y-2">
+        <li><strong>All Coupons, One Place:</strong> Gather coupons from SMS, emails, images, or manual entries—unified in a single, easy-to-browse inventory.</li>
+        <li><strong>AI-Powered Smart Search:</strong> Ask in plain language like “Show me food coupons expiring this week.” Our AI delivers instantly!</li>
+        <li><strong>Exclusive Partner Offers:</strong> Get personalized discounts from top brands. Redeem them with a tap.</li>
+        <li><strong>Auto-Import from SMS & Images:</strong> 📸 Snap a pic or grant SMS access—we'll do the rest!</li>
+        <li><strong>Never Lose a Deal Again:</strong> ⏰ Get alerts before expiry & 📍 find coupons when near a store.</li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-2xl font-semibold text-orange-500 mb-2">How It Works</h3>
+      <ul class="list-disc pl-6 text-gray-800 space-y-2">
+        <li>✅ Add Coupons – Snap, paste, or type.</li>
+        <li>✅ Organize – Smart categories & filters.</li>
+        <li>✅ Redeem – Show barcode or code at checkout.</li>
+        <li>✅ Save More – AI finds your best deals.</li>
+      </ul>
+      <div class="mt-4">
+        <a href="#download" class="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700">Get Started for FREE</a>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="text-2xl font-semibold text-orange-500 mb-2">Choose Your Plan</h3>
+      <div class="grid md:grid-cols-2 gap-6 text-left">
+        <div class="p-4 bg-yellow-50 border-2 border-yellow-300 rounded shadow">
+          <h4 class="text-xl font-bold mb-2">Free Tier</h4>
+          <ul class="list-disc pl-4">
+            <li>Basic coupon storage</li>
+            <li>5 scans/month</li>
+            <li>Ads supported</li>
+            <li>Standard categories</li>
+          </ul>
+        </div>
+        <div class="p-4 bg-yellow-100 border-2 border-yellow-400 rounded shadow">
+          <h4 class="text-xl font-bold mb-2">Premium (₹99/month)</h4>
+          <ul class="list-disc pl-4">
+            <li>Unlimited AI searches</li>
+            <li>Unlimited scans</li>
+            <li>Ad-free + Priority Coupons</li>
+            <li>Advanced analytics</li>
+          </ul>
+          <p class="mt-2 text-sm text-green-700 font-semibold">💡 Go Premium – Save up to 20% with annual plans!</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white p-6 rounded shadow text-center">
+      <h4 class="text-xl font-bold text-gray-800 mb-2">Join 10,000+ Savvy Shoppers!</h4>
+      <p>“This app saved me ₹3,000 last month!” – <strong>Priya K.</strong> ⭐⭐⭐⭐⭐</p>
+      <p>“The AI search is a game-changer!” – <strong>Rohan M.</strong> ⭐⭐⭐⭐⭐</p>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Partner Section -->
+  <section id="partner" class="p-10 bg-white text-center">
+    <h2 class="text-3xl font-bold mb-4">Our Partners</h2>
+    <p class="mb-6">We proudly partner with top brands and retailers who provide verified and updated coupons.</p>
+    <div class="flex flex-wrap justify-center gap-6">
+      <div class="p-4 bg-gray-100 rounded shadow">Amazon</div>
+      <div class="p-4 bg-gray-100 rounded shadow">Flipkart</div>
+      <div class="p-4 bg-gray-100 rounded shadow">Swiggy</div>
+      <div class="p-4 bg-gray-100 rounded shadow">Zomato</div>
+      <!-- Add more partners here -->
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="p-10 bg-gray-50 text-center">
+    <h2 class="text-3xl font-bold mb-4">Contact Us</h2>
+    <p>Email: support@mycouponbag.com</p>
+    <p>sssathesagar@gmail.com/pspujashinde@gmail.com</p>
+    <p>Address: Vasant Vihar, Solapur, Maharashtra, India</p>
+    <div class="social-icons">
+      <a href="https://www.reddit.com/r/mycouponbag" target="_blank"><img src="imgs/reddit-icon.png" alt="Reddit"></a>
+      <a href="https://www.facebook.com/mycouponbagfb" target="_blank"><img src="imgs/facebook-icon.png" alt="Facebook"></a>
+      <a href="https://www.instagram.com/mycouponbag" target="_blank"><img src="imgs/instagram-icon.png" alt="Instagram"></a>
+      <a href="https://x.com/BagCoupon18773" target="_blank"><img src="imgs/twitter-icon.png" alt="Twitter"></a>
+      <a href="https://discord.gg/ZjcSXUzn72" target="_blank"><img src="imgs/discord-icon.png" alt="Discord"></a>
+      <a href="https://www.linkedin.com/company/mycouponbag" target="_blank"><img src="imgs/linkedin-icon.png" alt="LinkedIn"></a>
+      <a href="https://www.youtube.com/@MyCouponBag" target="_blank"><img src="imgs/youtube-icon.png" alt="YouTube"></a>
+    </div>
+  </section>
+
+  <!-- Download Section -->
+  <section id="download" class="p-10 bg-white text-center">
+    <h2 class="text-3xl font-bold mb-4">Download the App</h2>
+    <p class="mb-6">Start saving today! Download MyCouponBag on your mobile device.</p>
+    <div class="flex justify-center gap-6">
+      <a href="#" class="bg-black text-white px-6 py-3 rounded-lg">App Store</a>
+      <a href="#" class="bg-green-600 text-white px-6 py-3 rounded-lg">Google Play</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center p-4 bg-blue-600 text-white mt-10">
+    &copy; 2025 MyCouponBag. All rights reserved.
+  </footer>
+  <script>
+    function toggleMenu() {
+      const navLinks = document.querySelector(".nav-links");
+      navLinks.style.display = navLinks.style.display === "flex" ? "none" : "flex";
+    }
+  </script>
+</body>
+</html>
